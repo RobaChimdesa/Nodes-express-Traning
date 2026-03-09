@@ -1,12 +1,22 @@
 //List
-const listofItems = ["Item1", "Item2"];
+export const listOfItems = ["Apple", "Ornage", "Banana","lemo"];
+export const listNumbersOne = [1,2,3,4,5,7];
+export const listNumbersTwo = [6,7,8,9,10];
 
 //User Data
-const userData = {
+export const userData = {
    
-    firsName : "Firs Name",
+    firstName : "Firs Name",
     lastName : "LastName",
     age: 45
+}
+
+export const orderData = {
+
+    orderId: 12345,
+    foodItem: "Pizza",
+    quantity: 2,
+    price: 19.99
 }
 
 export function testObjectarray(){
