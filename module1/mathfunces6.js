@@ -1,22 +1,23 @@
 // Adding Two numbers
-export function sum(a, b) {
+import {testConstatnt} from './constant.js'
+function sum(a, b) {
   return a + b;
 }
 
-export function sub(a, b) {
+function sub(a, b) {
   return a - b;
 }
-export function mul(a, b) {
+function mul(a, b) {
   return a * b;
 }
-export function div(a, b) {
+function div(a, b) {
   if (b === 0) {
     return "Division by zero is not allowed.";
   }
   return a / b;
 }
 // reminder ->
-export function remainder(a, b) {
+function remainder(a, b) {
   if (b === 0) {
     return "Division by zero is not allowed.";
   }
@@ -30,7 +31,7 @@ export function remainder(a, b) {
 //   }
 // }
 
-export function isEven(a){
+function isEven(a){
     if (a % 2 === 0) {
         return "The number is even.";}
     else {
@@ -38,4 +39,12 @@ export function isEven(a){
     }
 }
 
-export default { sum, sub, mul, div, remainder, isEven };
+export function testfunctions(){
+    console.log("The sum of 5 and 10 is: " + sum(5, 10));
+    console.log("The subtraction of 10 and 5 is: " + sub(10, 5));
+    console.log("The multiplication of 5 and 10 is: " + mul(5, 10));
+    console.log("The division of 10 and 5 is: " + div(10, 5));
+    console.log("The remainder of 10 and 3 is: " + remainder(10, 3));
+    console.log("even or odd: " + isEven(9));
+
+}
