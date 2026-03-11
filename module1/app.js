@@ -7,6 +7,7 @@ import {testDestructuringArray} from './distructuring.js'
 import {testDestructuringObject} from './distructuringObject.js'
 import {tesrestoffunction} from './restOp.js'
 import { tesrestofObject } from './restOpObje.js';
+import {callback} from '../async/timeout.js'
 
 
 // testFunctions();    
@@ -19,7 +20,7 @@ import { tesrestofObject } from './restOpObje.js';
 // testDestructuringObject();
 // tesrestoffunction();
 tesrestofObject();
-
+callback();
 
 
 
