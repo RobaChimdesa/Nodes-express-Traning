@@ -8,6 +8,7 @@ import {testDestructuringObject} from './distructuringObject.js'
 import {tesrestoffunction} from './restOp.js'
 import { tesrestofObject } from './restOpObje.js';
 import {callback} from '../async/timeout.js'
+import { summation, multiplication } from './spreadObjop.js';
 
 
 // testFunctions();    

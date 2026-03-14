@@ -1,32 +1,100 @@
 //List
-export const listOfItems = ["Apple", "Ornage", "Banana","lemo"];
-export const listNumbersOne = [1,2,3,4,5,7];
-export const listNumbersTwo = [6,7,8,9,10];
+export const listofItems = ["Apple", "Orange", "PinApple"];
+export const listOfNumbersOne = [1,2,3,4,5]
+export const listOfNumbersTwo = [6,7,8,9,10]
 
 //User Data
-export const userData1 = {
+export const userData = {
    
-    firstName : "Firs Name",
-    lastName : "LastName",
+    id:12,
+    firsName : "Abebe",
+    lastName : "Kebede",
     age: 45
 }
 
 export const userData2 = {
-    firstName : "Firs Name 2",
-    lastName : "LastName 2",
-    age: 25
+    id:13,
+    firsName : "Kebede",
+    lastName : "Abebe",
+    age: 24
 }
 
-
-export const orderData = {
-
-    orderId: 12345,
-    foodItem: "Pizza",
-    quantity: 2,
-    price: 19.99
+//Oder Mock 
+export const foodOrder = {
+      name : "Shero",
+      orderNumber: 12,
+      date: "",
+      hotel: "Mr x",
+      price: 20,
+      currency: "ETB",
+      userId:12
 }
 
-export function testObjectarray(){
+export const foodOrder2 = {
+      name : "Beyanet",
+      orderNumber: 13,
+      date: "",
+      hotel: "Mr y",
+      price: 40,
+      currency: "ETB",
+      userId : 12
+}
+export const foodOrder3 = {
+      name : "Beyanet",
+      orderNumber: 13,
+      date: "",
+      hotel: "Mr y",
+      price: 40,
+      currency: "ETB",
+      userId : 13
+}
+
+export const post1 = {
+    title : "Title of Post1",
+    body : "Text Body1",
+    createdAt: Date.UTC,
+     userId:12
+}
+export const post2 = {
+    title : "Title of Post1",
+    body : "Text Body1",
+    createdAt: Date.UTC,
+    userId:12
+}
+export const post3 = {
+    title : "Title of Post1",
+    body : "Text Body1",
+    createdAt: Date.UTC,
+    userId:13
+}
+
+export const notfication1 ={
+    title: "Notification Title1",
+    body: "Notification Body1",
+    Icon: "Icon",
+    userId:12
+} 
+export const notfication2 ={
+    title: "Notification Title2",
+    body: "Notification Body2",
+    Icon: "Icon2",
+    userId:12
+}
+export const notfication3 ={
+    title: "Notification Title2",
+    body: "Notification Body2",
+    Icon: "Icon2",
+    userId:13
+}
+
+export const orders = [foodOrder, foodOrder2, foodOrder3];
+export const users =[userData, userData2];
+export const posts =[post1, post2, post3];
+export const notifications = [notfication1,notfication2, notfication3];
+
+export function testObjectAndArray()
+{
+    //Print data
     console.log("List of items: ", listofItems);
     console.log("User Data : ", userData);
 }

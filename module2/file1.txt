@@ -1,0 +1,9 @@
+[Arrow Functions , Distracting and Spread/Rest Operators]
+Migrate All functions to arrow functions 
+Clean up the code flow like this 
+Dedicated file doing the tasks -> add testFunction that is exportable - > import and call that function in the app js 
+Make  rest operator for Object based on Array example 
+[Spread ] Create a function  Create a function that accepts n number of parameters and give the summation  // 1, 2, 3, ... [Sum]
+Async / Await 
+Exc 1
+Create an Async 

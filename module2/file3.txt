@@ -1,0 +1,13 @@
+Exercise  
+Module 1 [Basic JS and Typescript]
+[Module Import and Export] Within the Current Setup Add the following functions [15min]
+Subtraction 
+Multiplication
+Division     -> Make sure u  check division by zero
+Remainder  
+EvenOrOdd  -> Re-Use Reminder function  
+Create a new file mathfunces6.js 
+User export for exporting the functions 
+User Import for importing the function 
+Invoke the functions 
+            

@@ -59,8 +59,38 @@ await AsyncExcute();
 
 
 
+const fechData =() =>{
+   return new Promise((resolve, reject) =>{
+      setTimeout(() => {
+         const success = false;
+         if (success) { resolve({ id: 1, name: 'Alice' }); } 
+         else { reject(new Error('Failed to fetch')); }
+      },1000);
 
+   })
+   
 
+}
+
+async function asyData (){
+   try{
+      const asdata = await fechData();
+      console.log("the data")
+      console.log(asdata)
+   }
+   catch(err){
+      console.log(err.message)
+   }
+   finally{
+      console.log("always excuited")
+   }
+}
+
+await asyData();
+// fechData().then(data => 
+//    console.log("The Data " + data.name, data.id))
+// .catch(err => console.log(err.message));
+// .finally(() => console.log("This always excute"));
 
 
 

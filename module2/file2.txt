@@ -1,0 +1,14 @@
+function to get User Data
+Create an Async function to get Order Data
+Create an Async function to get calculate order
+Create a Async main function the calls this three functions and return user , order , totalOrder seq
+Exc 2 [Hint - User Promise.all]
+Create a Async function the get list of 
+Create a Async function the get list of posts
+Create a Async function the get list of notifications
+Create a Async main function to get users, posts and notification in parallel
+Req
+User async / await 
+Try / catch / finally [main functions]
+Use setTimeout to simulate the delay and 
+promise to simulate data coming from API
