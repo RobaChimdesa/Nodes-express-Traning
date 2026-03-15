@@ -107,6 +107,3 @@ export async function loadDashboard(userId) {
 // 3. Use setTimeout to simulate the delay
 // 4. User promise to simulate data coming from API
 
-// solution for  Exe1
-
-// solution for exe2

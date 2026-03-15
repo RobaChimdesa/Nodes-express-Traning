@@ -9,7 +9,7 @@
 // import { tesrestofObject } from './restOpObje.js';
 // import {callback} from '../async/timeout.js'
 // import { summation, multiplication } from './spreadObjop.js';
-import { processUser, loadDashboard } from './async/exersice.js'
+import { processUser, loadDashboard } from './async/exersice of module1.js'
 
 
 // testFunctions();    
