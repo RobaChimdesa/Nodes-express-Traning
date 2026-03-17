@@ -2,7 +2,10 @@ import { Request, Response } from "express";
 
 import { STATUS_CODES } from "node:http";
 
-import { getUsersService, createUserService } from "../services/user-services.js";
+import {
+  getUsersService,
+  createUserService,
+} from "../services/user-services.js";
 
 export const getUsers = (req: Request, res: Response) => {
   const response = getUsersService();

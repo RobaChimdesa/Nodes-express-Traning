@@ -33,9 +33,9 @@ export const createUserService = (id: any) => {
 };
 
 export const getUsersByIdService = (user: any) => {
-  const dara = getUsersByRepo(user); // Example of created user data
+  const data = getUsersByRepo(user); // Example of created user data
   const response = {
-    data: user,
+    data: data,
     status: 200,
     message: "Success",
     error: [],
