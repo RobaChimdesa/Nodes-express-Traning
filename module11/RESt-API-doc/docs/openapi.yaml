@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: Items API (YAML)
+  version: 1.0.0
+  description: Centralized OpenAPI specification in YAML.
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /items:
+    get:
+      summary: Get all items
+      description: Returns a list of all items
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              example:
+                - id: "A1"
+                  name: "Apple"
+                  isInStore: true
+                  amountInStore: 50
+                - id: "B2"
+                  name: "Banana"
+                  isInStore: false
+                  amountInStore: 0
+
+    post:
+      summary: Create a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: "Orange"
+              isInStore: true
+              amountInStore: 40
+      responses:
+        "201":
+          description: Item created
+          content:
+            application/json:
+              example:
+                id: "C3"
+                name: "Orange"
+                isInStore: true
+                amountInStore: 40
