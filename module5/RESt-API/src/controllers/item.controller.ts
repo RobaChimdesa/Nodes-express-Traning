@@ -1,47 +1,50 @@
 import { Request, Response } from "express";
 
-import { getItemsService, getItemByIdService, createItemService, updateItemService, deleteItemService  } from "../services/item.service";
-
+import {
+  getItemsService,
+  getItemByIdService,
+  createItemService,
+  updateItemService,
+  deleteItemService,
+} from "../services/item.service";
 
 export const getItems = (req: Request, res: Response) => {
 
   const response = getItemsService();
 
-  res.json(response);
 
+  res.json(response);
 };
 
-export const getItemById = (req: Request, res: Response) => {
 
+
+export const getItemById = (req: Request, res: Response) => {
   const { id } = req.params;
   const response = getItemByIdService(id);
 
   res.json(response);
-
 };
 
 export const createItem = (req: Request, res: Response) => {
   const item = req.body;
 
-   const response = createItemService(item);
+  const response = createItemService(item);
 
   res.status(201).json(response);
 };
 
 export const updateItem = (req: Request, res: Response) => {
-  
-   const item = req.body;
-   const { id } = req.params;
-   const response = updateItemService(id,item);
+  const item = req.body;
+  const { id } = req.params;
+  const response = updateItemService(id, item);
 
   res.status(200).json(response);
 };
 
 export const deleteItem = (req: Request, res: Response) => {
-  
-   const { id } = req.params;
+  const { id } = req.params;
 
-   const response = deleteItemService(id);
+  const response = deleteItemService(id);
 
   res.status(204).json(response);
 };

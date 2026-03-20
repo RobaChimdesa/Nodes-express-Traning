@@ -28,7 +28,10 @@ const items  =
     createAt: Date.UTC,
     updateAt: Date.UTC,
     isDeleted : false
-  }
+  },
+  
+
+
 ]
 
 export const getItemsRepo = () => {
@@ -78,28 +81,28 @@ export const updateItemRepo = (id:any, item:any) => {
 
   //Get the index 
   //That is not deleted 
-   const index = items.findIndex(item => item.id == id);
+  const index = items.findIndex(item => item.id == id);
    // Update the updatedAt
-   const updatedAt = Date.UTC;
+  const updatedAt = Date.UTC;
   // Verify it is not repeated 
   
   //Undate the data
-   items[index] = { ...items[index], ...item, updatedAt }  
+  items[index] = { ...items[index], ...item, updatedAt }  
   
-   const data = items[index];
+  const data = items[index];
 
-   return data;
+  return data;
 };
 
 export const deleteItemRepo = (id:any) => {
 
   //Grab the Data by Id
 
-   const index = items.findIndex(item => item.id == id);
+  const index = items.findIndex(item => item.id == id);
    //Undate the isDeleted
    //Soft Delete
-   const isDeleted =  true;
+  const isDeleted =  true;
 
-   items[index] = { ...items[index], isDeleted }  
-   return items[index];
+  items[index] = { ...items[index], isDeleted }  
+  return items[index];
 };
