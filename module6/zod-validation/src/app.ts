@@ -36,21 +36,21 @@ app.post("/zod-test-safe", (req, res) =>
    console.log(success, error, data );
 
    //Formatted Response 
-    const response =  
-    {
+   const response =  
+   {
       status : success || false,
       data : data || null,
       error : error || null
-    }
+   }
 
    if(success)
    {
-    res.send(response);
+   res.send(response);
    }
    else 
-    {
-       res.status(400).send(response);
-    }
+   {
+   res.status(400).send(response);
+   }
 
 });
 
@@ -65,32 +65,32 @@ app.post("/zod-test-safe", (req, res) =>
    console.log(success, error, data );
 
    //Formatted Response 
-    const response =  
-    {
+   const response =  
+   {
       status : success || false,
       data : data || null,
       error : error || null
-    }
+   }
 
    if(success)
    {
-    res.send(response);
+   res.send(response);
    }
    else 
-    {
-       res.status(400).send(response);
-    }
+   {
+      res.status(400).send(response);
+   }
 
 });
 
 app.post("/zod-test-safe-middleware", validate(UserSchema),  (req, res) => 
 {
-    const user = req.body;
-    res.send(user);
+   const user = req.body;
+   res.send(user);
 
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+console.log(`Server running at http://localhost:${PORT}`);
 });
