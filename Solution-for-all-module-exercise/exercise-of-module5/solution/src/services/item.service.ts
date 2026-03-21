@@ -7,22 +7,6 @@ import {
   deleteItemRepo,
 } from "../repositories/item.repository";
 
-// export const getItemsService = () => {
-//   const data = getItemsRepo();
-
-//   //Map , shape of reponse
-//   const response = {
-//     data: data,
-//     status: "sucess",
-//     message: "Date retrived succssfully!",
-//     statusCode: 200,
-//     error: null,
-//   };
-
-//   return response;
-// };
-
-// Type for pagination + filters
 interface GetItemsOptions {
   page?: number;
   limit?: number;

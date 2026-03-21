@@ -8,14 +8,6 @@ import {
   deleteItemService,
 } from "../services/item.service";
 
-// export const getItems = (req: Request, res: Response) => {
-
-//   const response = getItemsService();
-
-
-//   res.json(response);
-// };
-
 export const getItems = (req: Request, res: Response) => {
   // Extract query parameters (with safe defaults)
   const page   = Number(req.query.page)   || 1;
