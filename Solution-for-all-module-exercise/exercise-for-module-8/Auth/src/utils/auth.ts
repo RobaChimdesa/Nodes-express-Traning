@@ -37,13 +37,27 @@ export const verifyToken = (token: string) => {
 const REFRESH_SECRET = process.env.REFRESH_SECRET || JWT_SECRET; // fallback
 
 export const generateRefreshToken = (userId: number) => {
-  return jwt.sign(
-    { id: userId, type: "refresh" },
-    REFRESH_SECRET,
-    { expiresIn: "7d" }
-  );
+  return jwt.sign({ id: userId, type: "refresh" }, REFRESH_SECRET, {
+    expiresIn: "7d",
+  });
 };
 
 export const verifyRefreshToken = (token: string) => {
   return jwt.verify(token, REFRESH_SECRET) as { id: number; type: string };
+};
+
+// reset token is added
+
+const RESET_SECRET = process.env.RESET_SECRET || JWT_SECRET;
+
+export const generateResetToken = (userId: number) => {
+  return jwt.sign(
+    { id: userId, type: "reset" },
+    RESET_SECRET,
+    { expiresIn: "15m" }, // Short lived for security
+  );
+};
+
+export const verifyResetToken = (token: string) => {
+  return jwt.verify(token, RESET_SECRET) as { id: number; type: string };
 };
