@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // JS version
+    "module": "commonjs", // Node uses commonjs
+    "rootDir": "./src", // source code location
+    "outDir": "./dist", // compiled output
+    "strict": true, // strict typing
+    "esModuleInterop": true // allow default imports
+  }
+}
