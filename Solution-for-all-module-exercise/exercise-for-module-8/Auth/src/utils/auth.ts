@@ -31,3 +31,19 @@ export const verifyToken = (token: string) => {
     role: string;
   };
 };
+
+// refresh token is added
+
+const REFRESH_SECRET = process.env.REFRESH_SECRET || JWT_SECRET; // fallback
+
+export const generateRefreshToken = (userId: number) => {
+  return jwt.sign(
+    { id: userId, type: "refresh" },
+    REFRESH_SECRET,
+    { expiresIn: "7d" }
+  );
+};
+
+export const verifyRefreshToken = (token: string) => {
+  return jwt.verify(token, REFRESH_SECRET) as { id: number; type: string };
+};

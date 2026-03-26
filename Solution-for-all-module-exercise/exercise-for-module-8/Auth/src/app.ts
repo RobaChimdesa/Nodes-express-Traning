@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 import itemRouter from './routes/item.route'; // adjust path if needed
 import authRouter from './routes/auth.routes';

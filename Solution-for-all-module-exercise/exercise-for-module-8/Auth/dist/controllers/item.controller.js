@@ -1,26 +1,52 @@
-import { getItemsService, getItemByIdService, createItemService, updateItemService, deleteItemService } from "../services/item.service";
-export const getItems = (req, res) => {
-    const response = getItemsService();
-    res.json(response);
+import { getItemsService, getItemByIdService, createItemService, updateItemService, deleteItemService, } from '../services/item.service';
+export const getItems = async (_req, res) => {
+    try {
+        const response = await getItemsService();
+        res.json(response);
+    }
+    catch (err) {
+        res.status(500).json({ status: 'error', message: err.message });
+    }
 };
-export const getItemById = (req, res) => {
-    const { id } = req.params;
-    const response = getItemByIdService(id);
-    res.json(response);
+export const getItemById = async (req, res) => {
+    try {
+        const id = Number(req.params.id);
+        const response = await getItemByIdService(id);
+        res.json(response);
+    }
+    catch (err) {
+        const status = err.message.includes('not found') ? 404 : 500;
+        res.status(status).json({ status: 'error', message: err.message });
+    }
 };
-export const createItem = (req, res) => {
-    const item = req.body;
-    const response = createItemService(item);
-    res.status(201).json(response);
+export const createItem = async (req, res) => {
+    try {
+        const response = await createItemService(req.body);
+        res.status(201).json(response);
+    }
+    catch (err) {
+        res.status(400).json({ status: 'error', message: err.message });
+    }
 };
-export const updateItem = (req, res) => {
-    const item = req.body;
-    const { id } = req.params;
-    const response = updateItemService(id, item);
-    res.status(200).json(response);
+export const updateItem = async (req, res) => {
+    try {
+        const id = Number(req.params.id);
+        const response = await updateItemService(id, req.body);
+        res.json(response);
+    }
+    catch (err) {
+        const status = err.message.includes('not found') ? 404 : 400;
+        res.status(status).json({ status: 'error', message: err.message });
+    }
 };
-export const deleteItem = (req, res) => {
-    const { id } = req.params;
-    const response = deleteItemService(id);
-    res.status(204).json(response);
+export const deleteItem = async (req, res) => {
+    try {
+        const id = Number(req.params.id);
+        const response = await deleteItemService(id);
+        res.status(204).json(response);
+    }
+    catch (err) {
+        const status = err.message.includes('not found') ? 404 : 500;
+        res.status(status).json({ status: 'error', message: err.message });
+    }
 };

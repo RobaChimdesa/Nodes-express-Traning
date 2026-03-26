@@ -1,31 +1,26 @@
 import express from 'express';
-import * as Sentry from '@sentry/node';
-
+import Sentry from './lib/sentry';
 import routes from './routes';
 import { requestLogger } from './middleware/requestLogger';
 
 const app = express();
 
-// Initialize Sentry
-Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-});
-
-// Parse JSON
+// Parse JSON body
 app.use(express.json());
 
-// Custom logger
+
+// Custom request logger
 app.use(requestLogger);
 
-// Routes
+// Application routes
 app.use(routes);
 
-// ✅ Correct usage (NOT inside app.use)
+// Sentry error integration should run before custom error middleware.
 Sentry.setupExpressErrorHandler(app);
 
 // Custom error handler
 app.use((err: any, req: any, res: any, next: any) => {
-  console.error(err);
+  console.error(err); // log locally
 
   res.status(500).json({
     message: 'Internal Server Error'
