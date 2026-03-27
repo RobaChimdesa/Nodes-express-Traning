@@ -11,14 +11,14 @@
 // };
 // };
 // src/repositories/user.repository.ts
-import prisma from '../prisma/client';
+import prisma from "../prisma/client";
 export const createUserRepo = async (data) => {
     return prisma.user.create({
         data: {
             email: data.email,
             password: data.password,
             name: data.name,
-            role: data.role ?? 'USER', // Default role if not provided
+            role: data.role ?? "USER", // Default role if not provided
         },
     });
 };
@@ -27,5 +27,23 @@ export const findUserByEmailRepo = async (email) => {
         throw new Error("Email is required");
     return prisma.user.findUnique({
         where: { email },
+    });
+};
+export const findUserByResetTokenRepo = async (resetToken) => {
+    return prisma.user.findFirst({
+        where: {
+            resetToken,
+            resetTokenExpiry: { gt: new Date() }, // token not expired
+        },
+    });
+};
+export const updatePasswordRepo = async (id, newHashedPassword) => {
+    return prisma.user.update({
+        where: { id },
+        data: {
+            password: newHashedPassword,
+            resetToken: null, // clear token after use
+            resetTokenExpiry: null,
+        },
     });
 };
